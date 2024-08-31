@@ -4,5 +4,5 @@ Hello, this is a collection of smaller, mini-projects and functions I want to tr
 
 So far in this repo there is:
 
-### 01 - Consanant checker
+#### 01 - Consanant checker
 A python script that takes an input of a string, and outputs the number of consanants that are in that input. For example, "Hello World" would output "7", and "Turned upside-down" would output "10".
