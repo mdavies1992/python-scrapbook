@@ -8,3 +8,6 @@ A Python script that takes an input of a string, and outputs the number of conso
 
 ### 02 - Cave Goblin
 As a fantasy and gaming fan, this small exercise is a script that runs a combat simulation between a hero character (the player / you) and an NPC goblin. Choose from a list of moves, and the goblin randomly chooses there's, and deals damage to each other until one of you is defeated! (...or you run away, of course.)
+
+### 03 - Grid Traveller
+A script in which the user must navigate a "token" through a grid of 3x3 from one corner to another in a set of movements on the x or y access in a single square, with visuals to be updated as they progress.
