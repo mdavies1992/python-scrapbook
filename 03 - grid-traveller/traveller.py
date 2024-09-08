@@ -6,18 +6,38 @@
 # print("---+---+---+---")
 
 # straightline = "---+---+---+---"
-topline = " | - | - | - |"
-middleline = " | - | - | - |"
-bottomline = " | - | - | - |"
+baseline = " | - | - | - |"
 currentposition = "g"
 complete = False
 
 def printgrid():
-    print(topline)
+    global currentposition
+    if currentposition == "a":
+        print(" | O | - | - |")
+    elif currentposition == "b":
+        print(" | - | O | - |")
+    elif currentposition == "c":
+        print(" | - | - | O |")
+    else:
+        print(baseline)
     print("---+---+---+---")
-    print(middleline)
+    if currentposition == "d":
+        print(" | O | - | - |")
+    elif currentposition == "e":
+        print(" | - | O | - |")
+    elif currentposition == "f":
+        print(" | - | - | O |")
+    else:
+        print(baseline)
     print("---+---+---+---")
-    print(bottomline)
+    if currentposition == "g":
+        print(" | O | - | - |")
+    elif currentposition == "h":
+        print(" | - | O | - |")
+    elif currentposition == "i":
+        print(" | - | - | O |")
+    else:
+        print(baseline)
     print("---+---+---+---")
 
 def listactions(currentposition):
@@ -140,8 +160,8 @@ def updategrid(action):
 
 print("- GAME START -")
 print("You are in the bottom-left corner of this grid. You can move one square in x and y axis', depending on your location. Find your way to the top-right of the grid.")
-printgrid()
 while complete != True:
+    printgrid()
     listactions(currentposition)
     if complete != True:
         action = input("What direction would you like to move in?: ")
