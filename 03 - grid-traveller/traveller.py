@@ -10,7 +10,6 @@ topline = " | - | - | - |"
 middleline = " | - | - | - |"
 bottomline = " | - | - | - |"
 currentposition = "g"
-nextposition = "x"
 complete = False
 
 def printgrid():
@@ -28,7 +27,8 @@ def listactions(currentposition):
     elif currentposition == "b":
         print("You can move Down [D], Left [L] or Right [R]")
     elif currentposition == "c":
-        print("You are at the goal!")
+        print("You are at the goal! You win!")
+        complete = True
     elif currentposition == "d":
         print("You can move Up [U], Down [D] or Right [R]")
     elif currentposition == "e":
@@ -37,7 +37,6 @@ def listactions(currentposition):
         print("You can move Up [U], Down [D] or Left [L]")
     elif currentposition == "g":
         print("You can move Up [U] or Right [R]")
-        complete = True
     elif currentposition == "h":
         print("You can move Up [U], Left [L] or Right [R]")
     elif currentposition == "i":
@@ -46,18 +45,98 @@ def listactions(currentposition):
         print("I don't know how you got here, but you're off the grid now, good luck.")
         complete = True
 
-def choosemove(currentposition):
-    unlock = False
-    if unlock != True:
-        action = input("What direction would you like to move in?: ")
+def updategrid(action):
+    global currentposition
+    if currentposition == "a":
+        if action == "R":
+            print("You move to the Right.")
+            currentposition = "b"
+        elif action == "D":
+            print("You move Downwards.")
+            currentposition = "d"
+        else:
+            print("That is not a valid move.")
+    elif currentposition == "b":
+        if action == "L":
+            print("You move to the Left.")
+            currentposition = "a"
+        elif action == "R":
+            print("You move to the Right.")
+            currentposition = "c"
+        elif action == "D":
+            print("You move Downwards.")
+            currentposition = "e"
+        else:
+            print("That is not a valid move.")
+    elif currentposition == "d":
         if action == "U":
-            print("You move upwards.")
-            currentposition = ""
-            unlock = True
-
-def updategrid(choice):
-    print("a")
-
+            print("You move Upwards.")
+            currentposition = "a"
+        elif action == "R":
+            print("You move to the Right.")
+            currentposition = "e"
+        elif action == "D":
+            print("You move Downwards.")
+            currentposition = "g"
+        else:
+            print("That is not a valid move.")
+    elif currentposition == "e":
+        if action == "U":
+            print("You move Upwards.")
+            currentposition = "b"
+        elif action == "L":
+            print("You move to the Left.")
+            currentposition = "d"
+        elif action == "R":
+            print("You move to the Right.")
+            currentposition = "f"
+        elif action == "D":
+            print("You move Downwards.")
+            currentposition = "h"
+        else:
+            print("That is not a valid move.")
+    elif currentposition == "f":
+        if action == "U":
+            print("You move Upwards.")
+            currentposition = "c"
+        elif action == "L":
+            print("You move to the Left.")
+            currentposition = "e"
+        elif action == "D":
+            print("You move Downwards.")
+            currentposition = "i"
+        else:
+            print("That is not a valid move.")
+    elif currentposition == "g":
+        if action == "U":
+            print("You move Upwards.")
+            currentposition = "d"
+        elif action == "R":
+            print("You move to the Right.")
+            currentposition = "h"
+        else:
+            print("That is not a valid move.")
+    elif currentposition == "h":
+        if action == "U":
+            print("You move Upwards.")
+            currentposition = "e"
+        elif action == "L":
+            print("You move to the Left.")
+            currentposition = "g"
+        elif action == "R":
+            print("You move to the Right.")
+            currentposition = "i"
+        else:
+            print("That is not a valid move.")
+    elif currentposition == "i":
+        if action == "U":
+            print("You move Upwards.")
+            currentposition = "f"
+        elif action == "L":
+            print("You move to the Left.")
+            currentposition = "h"
+        else:
+            print("That is not a valid move.")
 
 print("- GAME START -")
 print("You are in the bottom-left corner of this grid. You can move one square in x and y axis', depending on your location. Find your way to the top-right of the grid.")
@@ -65,7 +144,6 @@ printgrid()
 while complete != True:
     listactions(currentposition)
     if complete != True:
-        choice = choosemove(currentposition)
-        updategrid(choice)
-        complete = True
+        action = input("What direction would you like to move in?: ")
+        updategrid(action)
 print("- GAME END -")
