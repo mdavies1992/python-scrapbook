@@ -47,10 +47,16 @@ def listactions(currentposition):
         complete = True
 
 def choosemove(currentposition):
-    print(currentposition)
+    unlock = False
+    if unlock != True:
+        action = input("What direction would you like to move in?: ")
+        if action == "U":
+            print("You move upwards.")
+            currentposition = ""
+            unlock = True
 
 def updategrid(choice):
-    print("test")
+    print("a")
 
 
 print("- GAME START -")
