@@ -11,3 +11,7 @@ As a fantasy and gaming fan, this small exercise is a script that runs a combat 
 
 ### 03 - Grid Traveller
 A script in which the user must navigate a "token" through a grid of 3x3 from one corner to another in a set of movements on the x or y access in a single square, with visuals to be updated as they progress.
+
+### 04 - Lambda Calculator
+A one-time, simple script to take two numerical inputs and an operator to set up and complete a computation. I
+only just learned about lambda functions, so I wanted to practice using them as they seem pretty neat!
