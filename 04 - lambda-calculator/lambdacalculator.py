@@ -32,9 +32,9 @@ print("- START -")
 print("Welcome to the Lambda Calculator.")
 first_number = int(input("Please enter the first number: "))
 second_number = int(input("Please enter the second number: "))
-oper = input("Please enter the oper for the two numbers [ + | - | / | * ]: ")
-if oper == "+" or "-" or "/" or "*":
-    print(f"The total is: {ops[oper](first_number, second_number)}")
+operator = input("Please enter the operator for the two numbers [ + | - | / | * ]: ")
+if operator == "+" or "-" or "/" or "*":
+    print(f"The total is: {ops[operator](first_number, second_number)}")
 else:
     print("That is an invalid operator. Please try again.")
 
